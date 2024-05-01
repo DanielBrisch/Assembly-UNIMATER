@@ -1,32 +1,18 @@
-ORG 000 / inicia programa no endereço 000
+v.MODEL small ; Define o modelo de memoria small
+.STACK 64 ; Aloca um espaço de 64 bytes para a pilha 
 
-Load D
-Store NAME_D
-Load a 
-Store NAME_A
-Load n
-Store NAME_N
-Load i
-Store NAME_I
-Load e
-Store NAME_E
-Load l
-Store NAME_L
+.DATA                             ; Inicio da seção
+    message db 'Soldador', '$'    ; Define uma mensagem e termina com $
 
-Halt / Termina execução 
+.CODE                              ; Inicio da seção de código
+main proc                          ; Define o inicio do procedimento principal
 
-D,HEX 68
-a,HEX 97
-n,HEX 110
-i,HEX 105
-e,HEX 101
-l,HEX 108
+         mov ax, @data             ; Carrega o endereço do segmento em AC
+         mov ds, ax                ; Move o valor em AX para o registrador DS
 
-/Reservar o espaço para o Nome Rafa
+         mov ah, 9h                ; Preparar o registrador AH para a função 09h do DOS
+         mov dx, offset message    ; vai fazer o deslocamento da msg em DX
 
-NAME_D, HEX 0
-NAME_A, HEX 0
-NAME_N, HEX 0
-NAME_I, HEX 0
-NAME_E, HEX 0
-NAME_L, HEX 0
+         int 21h                   ; Instrução de interrupção
+main endp                          ; Marca o fim do procedimento
+end main ; Indica o fim do procedimento todo 
