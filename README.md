@@ -1,4 +1,4 @@
-# Atividade - 1 
+# Atividade - 2 
 ## (Explicação linha por linha)
 
 ## Define o modelo de memoria small
