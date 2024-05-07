@@ -10,4 +10,4 @@
 
 
 ### Professor_girando_muito_foda.gif
-<img src="https://raw.githubusercontent.com/DanielBrisch/spin-head/main/head-gif.gif?token=GHSAT0AAAAAACOMLGWASPICIVT2TLPYXFWGZRRR7CA" style="width: 100%;">
+<img src="https://raw.githubusercontent.com/DanielBrisch/spin-head/main/head-gif.gif?token=GHSAT0AAAAAACOMLGWAC7GULJVAOVHIOHM6ZR2VO6A" style="width: 100%;">
