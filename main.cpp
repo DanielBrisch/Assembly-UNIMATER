@@ -1,21 +1,25 @@
 #include <Arduino.h>
-const int relay1 = 12;
-const int relay2 = 7;
+const int relay = 12;
+const int button = 4
+
+    int relayState = LOW;
+int buttonState = LOW;
+int lasButtonState = LOW;
 
 void setup()
 {
-    pinMode(relay1, OUTPUT);
-    pinMode(relay2, OUTPUT);
+    pinMode(relay, OUTPUT);
+    pinMode(button, INPUT);
 }
 
 void loop()
 {
-    digitalWrite(relay1, HIGH);
-    delay(1000);
-    digitalWrite(relay1, LOW);
-    delay(1000);
-    digitalWrite(relay2, HIGH);
-    delay(1000);
-    digitalWrite(relay2, LOW);
-    delay(1000);
+    buttonState = digitalRead(button);
+
+    if (buttonState == HIGH && lasButtonState == LOW)
+    {
+        relayState = !relayState;
+        digitalWrite(relay, relayState);
+    }
+    lasButtonState = buttonState;
 }
